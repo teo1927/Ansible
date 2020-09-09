@@ -3,11 +3,13 @@ This Script initializes the Ansible Quick Start directory structure and best pra
 
 ### Centos Distributions ONLY
 
+#### Download
+`git clone https://github.com/teo1927/Ansible.git`
+
 #### Usage
 `bash Ansible-Quick-Start.sh`
 #### Or
 `./Ansible-Quick-Start.sh`
 
 ##### Requisites
-1. Root User Privleges
-
+1. Root Privleges
