@@ -1,2 +1,2 @@
 # Ansible-Quick-Start
-Script to initialize the Ansible quick start and best practice environment
+Script to initialize the Ansible quick start directory structure and best practice environment
