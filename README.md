@@ -1,5 +1,5 @@
 # Ansible-Quick-Start.sh
-This Script initializes the Ansible quick start directory structure and best practice environment for horizontal scaling
+This Script initializes the Ansible Quick Start directory structure and best practice environment for horizontal scaling
 
 ### Centos Distributions ONLY
 
