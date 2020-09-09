@@ -36,3 +36,5 @@ unzip $zipfile -d $newdir
 mkdir "${ABSDIR}/Ansible-Projects/.New-Project-Template"
 cp -R ${newdir}Ansible-Quick-Start/ ${newdir}.New-Project-Template/
 rm $zipfile
+rm -f "${ABSDIR}/Ansible-Quick-Start.sh"
+rm -f "${ABSDIR}/README.md"
