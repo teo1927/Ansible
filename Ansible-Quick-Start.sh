@@ -19,6 +19,12 @@ if [ $? -eq 0 ] ; then
   else echo 'Error Installing Ansible';
   exit ;
   fi
+yum -y install python3
+if [ $? -eq 0 ] ; then 
+  echo 'Python3 Installed' ;
+  else echo 'Error Installing Python3';
+  exit ;
+  fi
 yum -y install unzip
 if [ $? -eq 0 ] ; then 
   echo 'Unzip Installed' ;
