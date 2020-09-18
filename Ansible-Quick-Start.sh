@@ -5,7 +5,7 @@ ABSDIR=$(dirname $ABSPATH) #Directory Where The Script Is Running From
 newdir="${ABSDIR}/Ansible-Projects/"
 firstprojectdir="${ABSDIR}/Ansible-Projects/My-Projects/New-Ansible-Project/"
 myprojectdir="${ABSDIR}/Ansible-Projects/My-Projects/"
-file="Ansible-Quick-Start.zip"
+file="Ansible-Projects.zip"
 zipfile="$newdir$file"
 echo "$ABSDIR"
 echo "$newdir"
