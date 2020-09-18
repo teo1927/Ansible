@@ -3,6 +3,8 @@ BASEDIR=$(dirname $0)
 ABSPATH=$(readlink -f $0) #Absolute Path Of where The Script Sits
 ABSDIR=$(dirname $ABSPATH) #Directory Where The Script Is Running From
 newdir="${ABSDIR}/Ansible-Projects/"
+firstprojectdir="${ABSDIR}/Ansible-Projects/My-Projects/New-Ansible-Project/"
+myprojectdir="${ABSDIR}/Ansible-Projects/My-Projects/"
 file="Ansible-Quick-Start.zip"
 zipfile="$newdir$file"
 echo "$ABSDIR"
@@ -39,8 +41,11 @@ if [ $? -eq 0 ] ; then
   fi
 git clone https://github.com/teo1927/Ansible-Quick-Start-Setup.git $newdir
 unzip $zipfile -d $newdir
-mkdir "${ABSDIR}/Ansible-Projects/.New-Project-Template"
-cp -R ${newdir}Ansible-Quick-Start/ ${newdir}.New-Project-Template/
+mkdir "${ABSDIR}/Ansible-Projects/My-Projects/.New-Project-Template"
+cp -R ${firstprojectdir} ${myprojectdir}.New-Project-Template/
+mkdir "${newdir}.Setup-Projects
+cp -R ${newdir}Setup-Projects/ ${newdir}.Setup-Projects/
+rm -rf ${newdir}Setup-Projects/
 rm $zipfile
 rm -f "${ABSDIR}/Ansible-Quick-Start.sh"
 rm -f "${ABSDIR}/README.md"
