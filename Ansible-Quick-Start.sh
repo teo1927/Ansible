@@ -1,13 +1,14 @@
 #!/bin/bash
 ABSPATH=$(readlink -f "$0") #Absolute Path Of where The Script Sits
 ABSDIR=$(dirname "$ABSPATH") #Directory Where The Script Is Running From
-newdir="${ABSDIR}/Ansible-Projects/"
-firstprojectdir="${ABSDIR}/Ansible-Projects/My-Projects/New-Ansible-Project/"
-myprojectdir="${ABSDIR}/Ansible-Projects/My-Projects/"
+newdir="/opt/Ansible-Projects/"
+firstprojectdir="/opt/Ansible-Projects/My-Projects/New-Ansible-Project/"
+myprojectdir="/opt/Ansible-Projects/My-Projects/"
 file="Ansible-Projects.zip"
 zipfile="$newdir$file"
 echo "$ABSDIR"
 echo "$newdir"
+
 yum -y install epel-release
 if [ $? -eq 0 ] ; then 
   echo 'Extra Packages for Enterprise Linux Installed' ;
