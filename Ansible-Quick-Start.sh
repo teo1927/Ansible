@@ -49,3 +49,5 @@ rm -f "$zipfile"
 rm -f "${ABSDIR}/Ansible-Quick-Start.sh"
 rm -f "${newdir}/README.md"
 rm -rf "${newdir}Setup-Projects/"
+ansible-playbook -i /opt/Ansible-Projects/.Setup-Projects/Setup-Projects/Jenkins-Server/inventories/staging/hosts /opt/Ansible-Projects/.Setup-Projects/Setup-Projects/Jenkins-Server/site.yml
+ansible-playbook -i /opt/Ansible-Projects/.Setup-Projects/Setup-Projects/VS-Code-Server/inventories/staging/hosts /opt/Ansible-Projects/.Setup-Projects/Setup-Projects/VS-Code-Server/site.yml
