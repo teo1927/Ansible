@@ -52,10 +52,11 @@ rm -rf "${newdir}Setup-Projects/"
 ansible-playbook -i /opt/Ansible-Projects/.Setup-Projects/Setup-Projects/Jenkins-Server/inventories/staging/hosts /opt/Ansible-Projects/.Setup-Projects/Setup-Projects/Jenkins-Server/site.yml
 ansible-playbook -i /opt/Ansible-Projects/.Setup-Projects/Setup-Projects/VS-Code-Server/inventories/staging/hosts /opt/Ansible-Projects/.Setup-Projects/Setup-Projects/VS-Code-Server/site.yml
 
-externalip=$(curl ifconfig.co > /dev/null 2>&1)
+externalip=$(curl ifconfig.co)
 jenkinslogin=$(docker exec -it jenkins cat /var/jenkins_home/secrets/initialAdminPassword)
 echo " "
-echo "Installed Service Info"
+echo " "
+echo "Service Information"
 echo " "
 echo "Ansible Workspace:" 
 echo "/opt/Ansible-Projects"
@@ -65,5 +66,6 @@ echo "http://${externalip}:8443/?folder=/opt"
 echo " "
 echo "Jenkins Dashboard:"
 echo "http://${externalip}:8080"
+echo "Password: ${jenkinslogin}"
 echo " "
 echo "Installation Complete"
