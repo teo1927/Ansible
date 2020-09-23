@@ -42,16 +42,16 @@ if [ $? -eq 0 ] ; then
   echo 'Error Installing git';
   exit ;
   fi
-git clone https://github.com/teo1927/Ansible-Quick-Start-Setup.git "$newdir"
-unzip "$zipfile" -d "$newdir"
-mkdir "${newdir}My-Projects/.New-Project-Template"
-cp -R "$firstprojectdir" "${myprojectdir}.New-Project-Template/"
-mkdir "${newdir}.Setup-Projects"
-cp -R "${newdir}Setup-Projects/" "${newdir}.Setup-Projects/"
-rm -f "$zipfile"
-rm -f "${ABSDIR}/Ansible-Quick-Start.sh"
-rm -f "${newdir}/README.md"
-rm -rf "${newdir}Setup-Projects/"
+git clone https://github.com/teo1927/Ansible-Quick-Start-Setup.git "$newdir" > /dev/null 2>&1
+unzip "$zipfile" -d "$newdir" > /dev/null 2>&1
+mkdir "${newdir}My-Projects/.New-Project-Template" > /dev/null 2>&1
+cp -R "$firstprojectdir" "${myprojectdir}.New-Project-Template/" > /dev/null 2>&1
+mkdir "${newdir}.Setup-Projects" > /dev/null 2>&1
+cp -R "${newdir}Setup-Projects/" "${newdir}.Setup-Projects/" > /dev/null 2>&1
+rm -f "$zipfile" > /dev/null 2>&1
+rm -f "${ABSDIR}/Ansible-Quick-Start.sh" > /dev/null 2>&1
+rm -f "${newdir}/README.md" > /dev/null 2>&1
+rm -rf "${newdir}Setup-Projects/" > /dev/null 2>&1
 ansible-playbook -i /opt/Ansible-Projects/.Setup-Projects/Setup-Projects/Jenkins-Server/inventories/staging/hosts /opt/Ansible-Projects/.Setup-Projects/Setup-Projects/Jenkins-Server/site.yml
 ansible-playbook -i /opt/Ansible-Projects/.Setup-Projects/Setup-Projects/VS-Code-Server/inventories/staging/hosts /opt/Ansible-Projects/.Setup-Projects/Setup-Projects/VS-Code-Server/site.yml
 
