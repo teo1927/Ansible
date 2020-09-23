@@ -9,34 +9,39 @@ zipfile="$newdir$file"
 echo "Targeted ${ABSDIR}"
 echo "Created ${newdir}"
 
-yum -y install epel-release
+yum -y install epel-release > /dev/null 2>&1
 if [ $? -eq 0 ] ; then 
-  echo 'Extra Packages for Enterprise Linux Installed' ;
-  else echo 'Error Installing Extra Packages for Enterprise Linux';
+  echo 'EPEL ................................ Installed' ;
+  else echo 'EPEL ................................ ERROR';
+  echo 'Error Installing epel-release';
   exit ;
   fi
-yum -y install ansible
+yum -y install ansible > /dev/null 2>&1
 if [ $? -eq 0 ] ; then 
-  echo 'Ansible Installed' ;
-  else echo 'Error Installing Ansible';
+  echo 'Ansible ............................. Installed' ;
+  else echo 'Ansible ............................. ERROR';
+  echo 'Error Installing ansible';
   exit ;
   fi
-yum -y install python3
+yum -y install python3 > /dev/null 2>&1
 if [ $? -eq 0 ] ; then 
-  echo 'Python3 Installed' ;
-  else echo 'Error Installing Python3';
+  echo 'Python3 ............................. Installed' ;
+  else echo 'Python3 ............................. ERROR';
+  echo 'Error Installing python3';
   exit ;
   fi
-yum -y install unzip
+yum -y install unzip > /dev/null 2>&1
 if [ $? -eq 0 ] ; then 
-  echo 'Unzip Installed' ;
-  else echo 'Error Installing Unzip';
+  echo 'Unzip ............................... Installed' ;
+  else echo 'Unzip ............................... ERROR';
+  echo 'Error Installing unzip'
   exit ;
   fi
-yum -y install git
+yum -y install git > /dev/null 2>&1
 if [ $? -eq 0 ] ; then 
-  echo 'Git Installed' ; 
-  else echo 'Error Installing Git';
+  echo 'Git ................................. Installed' ; 
+  else echo 'Git ................................. ERROR';
+  echo 'Error Installing git'
   exit ;
   fi
 git clone https://github.com/teo1927/Ansible-Quick-Start-Setup.git "$newdir"
