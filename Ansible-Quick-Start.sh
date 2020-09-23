@@ -61,8 +61,7 @@ rm -f "$zipfile" > /dev/null 2>&1
 rm -f "${ABSDIR}/Ansible-Quick-Start.sh" > /dev/null 2>&1
 rm -f "${newdir}/README.md" > /dev/null 2>&1
 rm -rf "${newdir}Setup-Projects/" > /dev/null 2>&1
-ansible-playbook -i /opt/Ansible-Projects/.Setup-Projects/Setup-Projects/Jenkins-Server/inventories/staging/hosts /opt/Ansible-Projects/.Setup-Projects/Setup-Projects/Jenkins-Server/site.yml
-ansible-playbook -i /opt/Ansible-Projects/.Setup-Projects/Setup-Projects/VS-Code-Server/inventories/staging/hosts /opt/Ansible-Projects/.Setup-Projects/Setup-Projects/VS-Code-Server/site.yml
+ansible-playbook -i /opt/Ansible-Projects/.Setup-Projects/Setup-Projects/Service-Setup/inventories/staging/hosts /opt/Ansible-Projects/.Setup-Projects/Setup-Projects/Service-Setup/site.yml --tags "docker,jenkins,code-server" 
 
 externalip=$(curl ifconfig.co)
 jenkinslogin=$(docker exec jenkins cat /var/jenkins_home/secrets/initialAdminPassword)
