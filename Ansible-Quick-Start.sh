@@ -34,14 +34,14 @@ yum -y install unzip > /dev/null 2>&1
 if [ $? -eq 0 ] ; then 
   echo 'Unzip ............................... Installed' ;
   else echo 'Unzip ............................... ERROR';
-  echo 'Error Installing unzip'
+  echo 'Error Installing unzip';
   exit ;
   fi
 yum -y install git > /dev/null 2>&1
 if [ $? -eq 0 ] ; then 
   echo 'Git ................................. Installed' ; 
   else echo 'Git ................................. ERROR';
-  echo 'Error Installing git'
+  echo 'Error Installing git';
   exit ;
   fi
 git clone https://github.com/teo1927/Ansible-Quick-Start-Setup.git "$newdir"
