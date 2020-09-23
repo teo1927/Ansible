@@ -53,19 +53,19 @@ ansible-playbook -i /opt/Ansible-Projects/.Setup-Projects/Setup-Projects/Jenkins
 ansible-playbook -i /opt/Ansible-Projects/.Setup-Projects/Setup-Projects/VS-Code-Server/inventories/staging/hosts /opt/Ansible-Projects/.Setup-Projects/Setup-Projects/VS-Code-Server/site.yml
 
 externalip=$(curl ifconfig.co)
-jenkinslogin=$(docker exec -it jenkins cat /var/jenkins_home/secrets/initialAdminPassword)
+jenkinslogin=$(docker exec jenkins cat /var/jenkins_home/secrets/initialAdminPassword)
 echo " "
-echo " "
-echo "Service Information"
-echo " "
-echo "Ansible Workspace:" 
-echo "/opt/Ansible-Projects"
-echo " "
-echo "Virtual Studio Code:"
-echo "http://${externalip}:8443/?folder=/opt"
-echo " "
-echo "Jenkins Dashboard:"
-echo "http://${externalip}:8080"
-echo "Password: ${jenkinslogin}"
-echo " "
+echo "+------------------------------------------+"
+echo "| Service Information"
+echo "|"
+echo "| Ansible Workspace:"
+echo "| /opt/Ansible-Projects"
+echo "|"
+echo "| Virtual Studio Code:"
+echo "| http://${externalip}:8443/?folder=/opt"
+echo "|"
+echo "| Jenkins Dashboard:"
+echo "| http://${externalip}:8080"
+echo "| Password: ${jenkinslogin}"
+echo "+------------------------------------------+"
 echo "Installation Complete"
