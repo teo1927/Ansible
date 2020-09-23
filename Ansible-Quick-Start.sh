@@ -52,9 +52,11 @@ rm -rf "${newdir}Setup-Projects/"
 ansible-playbook -i /opt/Ansible-Projects/.Setup-Projects/Setup-Projects/Jenkins-Server/inventories/staging/hosts /opt/Ansible-Projects/.Setup-Projects/Setup-Projects/Jenkins-Server/site.yml
 ansible-playbook -i /opt/Ansible-Projects/.Setup-Projects/Setup-Projects/VS-Code-Server/inventories/staging/hosts /opt/Ansible-Projects/.Setup-Projects/Setup-Projects/VS-Code-Server/site.yml
 
-externalip=$(curl ifconfig.co)
+externalip=$(curl ifconfig.co > /dev/null 2>&1)
 jenkinslogin=$(docker exec -it jenkins cat /var/jenkins_home/secrets/initialAdminPassword)
-
+echo " "
+echo "Installed Service Info"
+echo " "
 echo "Ansible Workspace:" 
 echo "/opt/Ansible-Projects"
 echo " "
