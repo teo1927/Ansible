@@ -56,12 +56,12 @@ externalip=$(curl ifconfig.co)
 jenkinslogin=$(docker exec -it jenkins cat /var/jenkins_home/secrets/initialAdminPassword)
 
 echo "Ansible Workspace:" 
-echo "Located At /opt/Ansible-Projects"
-echo.
+echo "/opt/Ansible-Projects"
+echo " "
 echo "Virtual Studio Code:"
-echo "At http://${externalip}:8443/?folder=/opt"
-echo.
+echo "http://${externalip}:8443/?folder=/opt"
+echo " "
 echo "Jenkins Dashboard:"
 echo "http://${externalip}:8080"
-echo.
+echo " "
 echo "Installation Complete"
