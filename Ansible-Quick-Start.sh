@@ -6,8 +6,8 @@ firstprojectdir="/opt/Ansible-Projects/My-Projects/New-Ansible-Project/"
 myprojectdir="/opt/Ansible-Projects/My-Projects/"
 file="Ansible-Projects.zip"
 zipfile="$newdir$file"
-echo "$ABSDIR"
-echo "$newdir"
+echo "Targeting ${ABSDIR}"
+echo "Creating ${newdir}"
 
 yum -y install epel-release
 if [ $? -eq 0 ] ; then 
