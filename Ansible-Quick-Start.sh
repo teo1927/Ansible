@@ -7,6 +7,8 @@ myprojectdir="/opt/Ansible-Projects/My-Projects/"
 file="Ansible-Projects.zip"
 zipfile="$newdir$file"
 
+echo 'Starting Installation Sequence...'
+
 yum -y install epel-release > /dev/null 2>&1
 if [ $? -eq 0 ] ; then 
   echo 'EPEL ................................ Installed' ;
