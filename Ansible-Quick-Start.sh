@@ -30,6 +30,13 @@ if [ $? -eq 0 ] ; then
   echo 'Error Installing python3';
   exit ;
   fi
+yum -y install python3-pip > /dev/null 2>&1
+if [ $? -eq 0 ] ; then 
+  echo 'Pip3 ................................ Installed' ;
+  else echo 'Pip ................................. ERROR';
+  echo 'Error Installing python3-pip';
+  exit ;
+  fi
 yum -y install unzip > /dev/null 2>&1
 if [ $? -eq 0 ] ; then 
   echo 'Unzip ............................... Installed' ;
