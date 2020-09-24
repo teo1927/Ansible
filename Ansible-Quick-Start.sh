@@ -1,4 +1,9 @@
 #!/bin/bash
+if [ "$EUID" -ne 0 ]
+  then echo "Please run as root"
+  exit
+fi
+
 ABSPATH=$(readlink -f "$0") #Absolute Path Of where The Script Sits
 ABSDIR=$(dirname "$ABSPATH") #Directory Where The Script Is Running From
 externalip=$(curl -s ifconfig.co)
