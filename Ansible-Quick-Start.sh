@@ -15,13 +15,13 @@ echo '2. Custom Installation'
 echo ''
 
 while true; do
-read -pr 'Choose Installation Method [1/2]:' choice
+read -p 'Choose Installation Method [1/2]:' choice
   if [[ $choice -eq '1' ]]; then
     jenkinschoice='y'
     codeserverchoice='y'
   elif [[ $choice -eq '2' ]]; then
     while true; do
-    read -pr "Install Jenkins Services? This will be available at http://${externalip}:8080 [y/n]" jenkinschoice
+    read -p "Install Jenkins Services? This will be available at http://${externalip}:8080 [y/n]" jenkinschoice
       if [[ $jenkinschoice == 'y' ]]; then
         break
       elif [[ $jenkinschoice == 'n' ]]; then
@@ -31,7 +31,7 @@ read -pr 'Choose Installation Method [1/2]:' choice
       fi
     done
     while true; do
-    read -pr "Install Visual Studio Code Services? This will be available at http://${externalip}:8443/?folder=/opt [y/n]" codeserverchoice
+    read -p "Install Visual Studio Code Services? This will be available at http://${externalip}:8443/?folder=/opt [y/n]" codeserverchoice
       if [[ $codeserverchoice == 'y' ]]; then
         break
       elif [[ $codeserverchoice == 'n' ]]; then
