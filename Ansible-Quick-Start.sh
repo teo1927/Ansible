@@ -1,6 +1,6 @@
 #!/bin/bash
 if [ "$EUID" -ne 0 ]
-  then echo "Please run as root"
+  then echo "This Script Can Only Be Run As root"
   exit
 fi
 
