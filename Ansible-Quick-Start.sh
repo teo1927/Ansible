@@ -15,35 +15,40 @@ echo '2. Custom Installation'
 echo ''
 
 while true; do
-read -p 'Choose Installation Method [1/2]:' choice
+  read -p 'Choose Installation Method [1/2]:' choice
   if [[ $choice -eq '1' ]]; then
     jenkinschoice='y'
     codeserverchoice='y'
+    break
   elif [[ $choice -eq '2' ]]; then
-    while true; do
-    read -p "Install Jenkins Services? This will be available at http://${externalip}:8080 [y/n]" jenkinschoice
-      if [[ $jenkinschoice == 'y' ]]; then
-        break
-      elif [[ $jenkinschoice == 'n' ]]; then
-        break
-      else
-        echo 'Invalid Entry: Please Provide y or n'
-      fi
-    done
-    while true; do
-    read -p "Install Visual Studio Code Services? This will be available at http://${externalip}:8443/?folder=/opt [y/n]" codeserverchoice
-      if [[ $codeserverchoice == 'y' ]]; then
-        break
-      elif [[ $codeserverchoice == 'n' ]]; then
-        break
-      else
-        echo 'Invalid Entry: Please Provide y or n'
-      fi
-    done
-  else
+    break
+  else 
     echo 'Invalid Entry: Please Provide 1 or 2'
   fi
 done
+
+if [[ $choice -eq '2' ]]; then
+  while true; do
+    read -p "Install Jenkins Services? This will be available at http://${externalip}:8080 [y/n]" jenkinschoice
+    if [[ $jenkinschoice == 'y' ]]; then
+      break
+    elif [[ $jenkinschoice == 'n' ]]; then
+      break
+    else
+      echo 'Invalid Entry: Please Provide y or n'
+    fi
+  done
+  while true; do
+    read -p "Install Visual Studio Code Services? This will be available at http://${externalip}:8443/?folder=/opt [y/n]" codeserverchoice
+    if [[ $codeserverchoice == 'y' ]]; then
+      break
+    elif [[ $codeserverchoice == 'n' ]]; then
+      break
+    else
+      echo 'Invalid Entry: Please Provide y or n'
+    fi
+  done
+fi
 
 echo 'Starting Installation Sequence...'
 yum -y install epel-release > /dev/null 2>&1
