@@ -3,7 +3,6 @@ if [ "$EUID" -ne 0 ]
   then echo "[ERROR] This Script Can Only Be Run As root"
   exit
 fi
-
 ABSPATH=$(readlink -f "$0") #Absolute Path Of where The Script Sits
 ABSDIR=$(dirname "$ABSPATH") #Directory Where The Script Is Running From
 externalip=$(curl -s ifconfig.co)
@@ -12,13 +11,11 @@ firstprojectdir="/opt/Ansible-Projects/My-Projects/New-Ansible-Project/"
 myprojectdir="/opt/Ansible-Projects/My-Projects/"
 file="Ansible-Projects.zip"
 zipfile="$newdir$file"
-
 echo ''
 echo 'Installation Options'
 echo '1. Express Installation'
 echo '2. Custom Installation'
 echo ''
-
 while true; do
   read -p 'Choose Installation Method [1/2]:' choice
   if [[ $choice -eq '1' ]]; then
@@ -54,7 +51,6 @@ if [[ $choice -eq '2' ]]; then
     fi
   done
 fi
-
 echo 'Starting Installation Sequence...'
 yum -y install epel-release > /dev/null 2>&1
 if [ $? -eq 0 ] ; then 
@@ -108,7 +104,6 @@ rm -f "$zipfile" > /dev/null 2>&1
 rm -f "${ABSDIR}/Ansible-Quick-Start.sh" > /dev/null 2>&1
 rm -f "${newdir}/README.md" > /dev/null 2>&1
 rm -rf "${newdir}Setup-Projects/" > /dev/null 2>&1
-
 if [[ $jenkinschoice == 'y' ]] && [[ $codeserverchoice == 'y' ]]; then
   ansible-playbook -i /opt/Ansible-Projects/.Setup-Projects/Setup-Projects/Service-Setup/inventories/staging/hosts /opt/Ansible-Projects/.Setup-Projects/Setup-Projects/Service-Setup/site.yml --tags "docker,jenkins,code-server";
   jenkinslogin=$(docker exec jenkins cat /var/jenkins_home/secrets/initialAdminPassword);
