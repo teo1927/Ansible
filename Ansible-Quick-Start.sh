@@ -54,43 +54,43 @@ fi
 echo 'Starting Installation Sequence...'
 yum -y install epel-release > /dev/null 2>&1
 if [ $? -eq 0 ] ; then 
-  echo 'EPEL ................................ Installed' ;
-  else echo 'EPEL ................................ ERROR';
+  echo 'EPEL ............................ Installed' ;
+  else echo 'EPEL ............................ ERROR';
   echo 'Error Installing epel-release';
   exit ;
   fi
 yum -y install ansible > /dev/null 2>&1
 if [ $? -eq 0 ] ; then 
-  echo 'Ansible ............................. Installed' ;
-  else echo 'Ansible ............................. ERROR';
+  echo 'Ansible ......................... Installed' ;
+  else echo 'Ansible ......................... ERROR';
   echo 'Error Installing ansible';
   exit ;
   fi
 yum -y install python3 > /dev/null 2>&1
 if [ $? -eq 0 ] ; then 
-  echo 'Python3 ............................. Installed' ;
-  else echo 'Python3 ............................. ERROR';
+  echo 'Python3 ......................... Installed' ;
+  else echo 'Python3 ......................... ERROR';
   echo 'Error Installing python3';
   exit ;
   fi
 yum -y install python3-pip > /dev/null 2>&1
 if [ $? -eq 0 ] ; then 
-  echo 'Pip3 ................................ Installed' ;
-  else echo 'Pip ................................. ERROR';
+  echo 'Pip3 ............................ Installed' ;
+  else echo 'Pip ............................. ERROR';
   echo 'Error Installing python3-pip';
   exit ;
   fi
 yum -y install unzip > /dev/null 2>&1
 if [ $? -eq 0 ] ; then 
-  echo 'Unzip ............................... Installed' ;
-  else echo 'Unzip ............................... ERROR';
+  echo 'Unzip ........................... Installed' ;
+  else echo 'Unzip ........................... ERROR';
   echo 'Error Installing unzip';
   exit ;
   fi
 yum -y install git > /dev/null 2>&1
 if [ $? -eq 0 ] ; then 
-  echo 'Git ................................. Installed' ; 
-  else echo 'Git ................................. ERROR';
+  echo 'Git ............................. Installed' ; 
+  else echo 'Git ............................. ERROR';
   echo 'Error Installing git';
   exit ;
   fi
