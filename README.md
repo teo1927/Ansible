@@ -11,8 +11,12 @@ This Script Creates A Pre-Configured Developer Environemt Utilizing Docker Conta
 ## Centos Distributions ONLY
 
 ## Usage
+### Setup
 `bash <(curl -fsSL https://raw.githubusercontent.com/teo1927/Ansible/master/Ansible-Quick-Start.sh)`
-
+### New Project
+`bash New-Project.sh <Project_Name>`
+### New Role
+`bash New-Role.sh <Role_Name>`
 ## Requisites
 1. Root Privleges
 2. Centos Operating System
