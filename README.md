@@ -16,3 +16,4 @@ This Script Creates A Pre-Configured Developer Environemt Utilizing Docker Conta
 ## Requisites
 1. Root Privleges
 2. Centos Operating System
+3. Internet Connection
