@@ -7,7 +7,7 @@ This script creates a pre-configured developer environemt utilizing Docker conta
 ![](images/Directory-Structure.png)
 - **Virtual Studio Code allows access and collaboration from any machine via web browser**
 ![](images/Code-Server.png)
-- **Jenkins continuous integration suite shares the same file system and supports Ansible integration**
+- **Jenkins shares the same file system and its plugin manager supports Ansible integration**
 ![](images/Jenkins-Dashboard.png)
 
 ## Centos Distributions ONLY
