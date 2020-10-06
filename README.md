@@ -13,6 +13,7 @@ This script creates a pre-configured developer environemt utilizing Docker conta
 ## Usage
 ### Initial Setup
 `bash <(curl -fsSL https://raw.githubusercontent.com/teo1927/Ansible/master/Ansible-Quick-Start.sh)`
+### Internal Scripts
 #### New Project
 `bash New-Project.sh <Project_Name>`
 #### New Role
