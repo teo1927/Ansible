@@ -1,7 +1,9 @@
 # Ansible-Quick-Start.sh
-This Script Initializes A Developer Environemt Enabling Cutting Edge Automation Software On Pre-Configured Docker Containers. The Services Include Automation Applications Such As Ansible and Jenkins And Their Respective Community Projects Created Using This Platform. The Services are easily accessable and share the host machines file system. All edits are possible via virtual studio code in your web browser encouraging off prem collaboration and usablility.
+This Script Creates A Pre-Configured Developer Environemt Utilizing Docker Containers To House Cutting Edge Automation Software. The Services Include Automation Applications Such As Ansible and Jenkins And respective Community Projects created by contributers to the platform. The Services are aimed towards lessening the spin up time of production environments and encourage mobile collaboration of automation/pipelining libraries. All Services are easily accessable via browser due to the container and host shared file system. All edits are possible via virtual studio code in your web browser allowing for off prem collaboration and usablility.
 
 ### Features
+## Develop First, Deploy Later
+
 - Ansible Quick Start directory structure contains best practice environment for efficient horizontal scaling
 - Virtual Studio Code allows access and collaboration from any machine via web browser
 - Jenkins continuous integration suite shares the same file system as the other automation services
