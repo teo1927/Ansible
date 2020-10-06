@@ -4,7 +4,7 @@ This Script Creates A Pre-Configured Developer Environemt Utilizing Docker Conta
 
 ## Features
 - Ansible Quick Start directory structure contains best practice environment for efficient horizontal scaling
-
+![](images/Directory-Structure.png)
 - Virtual Studio Code allows access and collaboration from any machine via web browser
 - Jenkins continuous integration suite shares the same file system as the other automation services
 
