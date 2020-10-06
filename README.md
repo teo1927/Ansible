@@ -17,6 +17,8 @@ This Script Creates A Pre-Configured Developer Environemt Utilizing Docker Conta
 `bash New-Project.sh <Project_Name>`
 #### New Role
 `bash New-Role.sh <Role_Name>`
+#### Ansible Host Configuration
+`python3 configure_hosts.py`
 ## Requisites
 1. Root Privleges
 2. Centos Operating System
