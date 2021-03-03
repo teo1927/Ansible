@@ -6,6 +6,7 @@ fi
 ABSPATH=$(readlink -f "$0") #Absolute Path Of where The Script Sits
 ABSDIR=$(dirname "$ABSPATH") #Directory Where The Script Is Running From
 externalip=$(curl -s ifconfig.co)
+internalip=$(hostname -I)
 newdir="/opt/Ansible-Projects/"
 firstprojectdir="/opt/Ansible-Projects/My-Projects/New-Ansible-Project/"
 myprojectdir="/opt/Ansible-Projects/My-Projects/"
@@ -31,7 +32,7 @@ done
 
 if [[ $choice -eq '2' ]]; then
   while true; do
-    read -p "Install Jenkins Services? This will be available at http://${externalip}:8080 [y/n]" jenkinschoice
+    read -p "Install Jenkins Services? This will be available at http://${externalip}:8080 (External) or http://${internalip}:8080 (Internal) [y/n]" jenkinschoice
     if [[ $jenkinschoice == 'y' ]]; then
       break
     elif [[ $jenkinschoice == 'n' ]]; then
@@ -41,7 +42,7 @@ if [[ $choice -eq '2' ]]; then
     fi
   done
   while true; do
-    read -p "Install Visual Studio Code Services? This will be available at http://${externalip}:8443/?folder=/opt [y/n]" codeserverchoice
+    read -p "Install Visual Studio Code Services? This will be available at http://${externalip}:8443/?folder=/opt (External) http://${internalip}:8443/?folder=/opt (Internal) [y/n]" codeserverchoice
     if [[ $codeserverchoice == 'y' ]]; then
       break
     elif [[ $codeserverchoice == 'n' ]]; then
@@ -115,10 +116,12 @@ if [[ $jenkinschoice == 'y' ]] && [[ $codeserverchoice == 'y' ]]; then
   echo "| /opt/Ansible-Projects";
   echo "|";
   echo "| Virtual Studio Code:";
-  echo "| http://${externalip}:8443/?folder=/opt";
+  echo "| http://${externalip}:8443/?folder=/opt (Public)";
+  echo "| http://${internalip}:8443/?folder=/opt (Private)";
   echo "|";
   echo "| Jenkins Dashboard:";
-  echo "| http://${externalip}:8080";
+  echo "| http://${externalip}:8080 (Public)";
+  echo "| http://${internalip}:8080 (Private)";
   echo "| Password: ${jenkinslogin}";
   echo "+------------------------------------------+";
   echo "Installation Complete"
@@ -133,7 +136,8 @@ elif [[ $jenkinschoice == 'y' ]] && [[ $codeserverchoice == 'n' ]]; then
   echo "| /opt/Ansible-Projects";
   echo "|";
   echo "| Jenkins Dashboard:";
-  echo "| http://${externalip}:8080";
+  echo "| http://${externalip}:8080 (Public)";
+  echo "| http://${internalip}:8080 (Private)";
   echo "| Password: ${jenkinslogin}";
   echo "+------------------------------------------+";
   echo "Installation Complete"
@@ -147,7 +151,8 @@ elif [[ $jenkinschoice == 'n' ]] && [[ $codeserverchoice == 'y' ]]; then
   echo "| /opt/Ansible-Projects";
   echo "|";
   echo "| Virtual Studio Code:";
-  echo "| http://${externalip}:8443/?folder=/opt";
+  echo "| http://${externalip}:8443/?folder=/opt (Public)";
+  echo "| http://${internalip}:8443/?folder=/opt (Private)";
   echo "+------------------------------------------+";
   echo "Installation Complete"
 elif [[ $jenkinschoice == 'n' ]] && [[ $codeserverchoice == 'n' ]]; then
